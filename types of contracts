@@ -1,0 +1,29 @@
+
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+#constructor 
+contract username{
+  string public name = "aarna";
+  uint public count;
+  constructor(uint _initial){
+    count=_initial;
+  }
+}
+
+#functions
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract username{
+  uint public count;
+  function increment() public{
+    count=count+1;
+  }
+  function decrement() public{
+    count=count-1;
+  }
+}
+
+
+
