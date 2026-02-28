@@ -1,0 +1,16 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract ifelse{
+    function checknum(uint x) public pure returns(string memory){
+        if(x>10){
+            return "greater than 10";
+        }
+        else if(x==10){
+            return "equal to 10";
+        }
+        else{
+            return " smallar than 10";
+        }
+    }
+}
