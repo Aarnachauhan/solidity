@@ -1,0 +1,23 @@
+static variables
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract username{
+  uint public count;
+  
+}
+
+local variables
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract username{
+  function increment() public pure returns(uint){
+   uint x=1;
+   uint y=2;
+   return x+y;
+  } 
+}
+
+
+global variables- already declared.
