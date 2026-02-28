@@ -1,0 +1,50 @@
+🟢 1️⃣ PURE
+Meaning:
+
+Function does NOT:
+
+Read state variables
+
+Modify state variables
+
+Only works with local variables.
+contract Example {
+
+    function add(uint a, uint b) public pure returns(uint) {
+        return a + b;
+    }
+}
+
+🔵 2️⃣ VIEW
+Meaning:
+
+Can READ state variables
+Cannot MODIFY them
+
+contract Example {
+
+    uint public number = 10;
+
+    function getNumber() public view returns(uint) {
+        return number;
+    }
+}
+
+🔴 3️⃣ (Nothing)
+
+If you don’t write pure/view → it means:
+
+Function can modify blockchain state.
+
+Example:
+
+contract Example {
+
+    uint public number;
+
+    function setNumber(uint _num) public {
+        number = _num;
+    }
+}
+
+This modifies state → requires gas.
