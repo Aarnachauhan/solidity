@@ -1,0 +1,63 @@
+public 
+pragma solidity ^0.8.0;
+
+contract Example {
+
+    uint public number;
+
+    function setNumber(uint _num) public {
+        number = _num;
+    }
+}
+
+---------------------------------------------------------------
+
+private - only this contract can call update number
+contract Example {
+
+    uint public number;
+
+    function setNumber(uint _num) public {
+        _updateNumber(_num);
+    }
+
+    function _updateNumber(uint _num) private {
+        number = _num;
+    }
+}
+----------------------------------------------------------------------
+internal - can be called inside this contract or inside inheritance contract
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract Parent {
+
+    function greet() internal pure returns(string memory) {
+        return "Hello aarna";
+    }
+}
+
+contract Child is Parent {
+
+    function callGreet() public pure returns(string memory) {
+        return greet();
+    }
+}
+----------------------------------------------------------------------------
+external 
+
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract ExternalExample {
+
+    // 1️⃣ External Function
+    function greet() external pure returns(string memory) {
+        return "Hi Aarna";
+    }
+
+    // 3️⃣ Correct way to call external from same contract
+    function testSuccess() public view returns(string memory) {
+        return this.greet();   // ✅ Works
+    }
+}
