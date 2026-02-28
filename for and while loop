@@ -1,0 +1,51 @@
+for loop
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract forloop{
+   function sum(uint n) public pure returns(uint){
+    uint total=0;
+    for(uint i=1;i<=n;i++){
+        total+=i;
+    }
+    return total;
+   }
+}
+------------------------------
+loop through array
+pragma solidity ^0.8.0;
+
+contract ArrayLoop {
+
+    function getSum(uint[] memory arr) public pure returns(uint) {
+
+        uint total = 0;
+
+        for (uint i = 0; i < arr.length; i++) {
+            total += arr[i];
+        }
+
+        return total;
+    }
+}
+---------------------------------------------------------
+
+while loop
+
+pragma solidity ^0.8.0;
+
+contract WhileExample {
+
+    function countDown(uint n) public pure returns(uint) {
+
+        uint count = 0;
+
+        while (n > 0) {
+            count++;
+            n--;
+        }
+
+        return count;
+    }
+}
+
